@@ -5,7 +5,16 @@
 *.tmp
 *.log
 ~$*.docx
+
+# Exclude Reports, Syllabus, Docs & Excel from GitHub (Kept locally only)
+*.docx
+*.pdf
+*.xlsx
+*.xls
+docs/
+
+# Temporary scripts
 update_report_with_github.py
+fix_report_layout.py
 /12613305_CAP455_CA3_TheatreRehearsalManager.cpp
-/12613305_CAP455_CA3_TheatreRehearsalManager.docx
 ca 3/*_Updated.docx

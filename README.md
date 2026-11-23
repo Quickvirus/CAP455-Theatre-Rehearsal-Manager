@@ -56,21 +56,27 @@ The **Theatre Rehearsal Cast and Prop Manager** is an enterprise-grade console a
 
 ```text
 CPP Project/
-├── docs/
-│   ├── 12613305_CAP455_CA3_TheatreRehearsalManager.docx   # Unified Comprehensive Project Report
-│   ├── ca3_uml_diagram.png                                # High-Res UML Class & Inheritance Hierarchy
-│   └── ca3_flowchart.png                                  # Safe Update/Delete Execution Flowchart
+├── ca 1/
+│   ├── 12613305_CAP455_CA1_TheatreRehearsalManager.cpp    # CA1 Source Code (Arrays, Pointers, Inline, Friend)
+│   ├── ca1_uml_diagram.png                                # CA1 UML Class Diagram
+│   └── ca1_flowchart.png                                  # CA1 Execution Flowchart
+├── ca 2/
+│   ├── 12613305_CAP455_CA2_TheatreRehearsalManager.cpp    # CA2 Source Code (Constructors, Binary File Persistence)
+│   ├── ca2_uml_diagram.png                                # CA2 UML Class Diagram
+│   └── ca2_flowchart.png                                  # CA2 Binary File Operations Flowchart
+├── ca 3/
+│   ├── 12613305_CAP455_CA3_TheatreRehearsalManager.cpp    # CA3 Source Code (Inheritance, Polymorphism, Safe Delete)
+│   ├── ca3_uml_diagram.png                                # CA3 Inheritance & Architecture Diagram
+│   ├── ca3_flowchart.png                                  # CA3 Safe Update/Delete Execution Flowchart
+│   └── rehearsal_db.dat                                   # Binary database engine file (116 bytes/record)
 ├── src/
-│   └── 12613305_CAP455_CA3_TheatreRehearsalManager.cpp    # Complete, Compilable Cumulative C++ Source Code
+│   └── 12613305_CAP455_CA3_TheatreRehearsalManager.cpp    # Latest CA3 C++ Source Code
 ├── data/
-│   └── rehearsal_db.dat                                   # Binary persistent database file (116 bytes/record)
+│   └── rehearsal_db.dat                                   # Persistent binary database file
 ├── tests/
 │   ├── edge_cases_test_table.md                           # 10-point comprehensive edge-case test matrix
-│   └── test_run_log.txt                                   # Terminal transcript capturing full demo execution
-├── 12613305_CAP455_CA3_TheatreRehearsalManager.cpp        # Root source code file
-├── 12613305_CAP455_CA3_TheatreRehearsalManager.docx       # Root submission report copy
-├── 12613305.docx                                          # Consolidated submission report
-└── README.md                                              # Project build, run, and defense guide
+│   └── test_run_log.txt                                   # Terminal transcript capturing full test execution
+└── README.md                                              # Project build, run, and architecture guide
 ```
 
 ---
