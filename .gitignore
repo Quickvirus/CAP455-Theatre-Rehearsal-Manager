@@ -1,0 +1,10 @@
+# Build & Temporary Files
+*.exe
+*.o
+*.obj
+*.tmp
+*.log
+~$*.docx
+update_report_with_github.py
+12613305_CAP455_CA3_TheatreRehearsalManager.cpp
+ca 3/*_Updated.docx
