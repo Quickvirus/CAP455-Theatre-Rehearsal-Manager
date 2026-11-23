@@ -1,0 +1,185 @@
+==========================================================
+    THEATRE REHEARSAL CAST & PROP MANAGER (Phase CA3)     
+==========================================================
+1. Add New Record (Cast Member / Stage Prop)
+2. Display All Active Records (Binary File Stream)
+3. Search Record by ID (seekg byte scan)
+4. Safe Update Record (seekp with confirmation)
+5. Safe Delete Record (seekp soft-delete with confirmation)
+6. Restore Deleted Record (Safety undelete)
+7. Demonstrate Operator Overloading & Type Conversion (Unit IV)
+8. Demonstrate Dynamic Memory & Runtime Polymorphism (Unit V)
+9. Exit Application
+----------------------------------------------------------
+Enter your choice (1-9): 2
+
+------------------------------------------------------------------------------------------
+ID      Type          Name / Title          Role / Category   Scene   Hrs/Qty   Status    
+------------------------------------------------------------------------------------------
+1001    Cast Member   Amit Sharma           King Lear (Lead)  1       35 hrs    Ready     
+1002    Cast Member   Sunita Rao            Cordelia (Supp)   2       22 hrs    Ready     
+2001    Stage Prop    Gilded Crown          Royal Regalia     1       2 pcs     Ready     
+2002    Stage Prop    Battle Dagger         Armory Weapon     3       5 pcs     Pending   
+------------------------------------------------------------------------------------------
+
+Enter your choice (1-9): 4
+
+Enter Resource ID to update: 1001
+
+--- Target Record Located for Update ---
+--------------------------------------------------
+       DETAILED RESOURCE AUDIT (FRIEND ACCESS)    
+--------------------------------------------------
+Resource ID (Key) : 1001
+Category Type     : Cast Member
+Name / Title      : Amit Sharma
+Role / Prop Type  : King Lear (Lead)
+Assigned Scene    : Scene 1
+Readiness Status  : Ready
+Memory Byte Size  : 116 bytes on disk
+--------------------------------------------------
+Are you sure you want to update this record? (y/n): n
+
+[Cancelled] Update aborted by user. Record remains unchanged.
+
+Enter your choice (1-9): 4
+
+Enter Resource ID to update: 1001
+
+--- Target Record Located for Update ---
+--------------------------------------------------
+       DETAILED RESOURCE AUDIT (FRIEND ACCESS)    
+--------------------------------------------------
+Resource ID (Key) : 1001
+Category Type     : Cast Member
+Name / Title      : Amit Sharma
+Role / Prop Type  : King Lear (Lead)
+Assigned Scene    : Scene 1
+Readiness Status  : Ready
+Memory Byte Size  : 116 bytes on disk
+--------------------------------------------------
+Are you sure you want to update this record? (y/n): y
+
+Enter New Values:
+Enter New Assigned Scene Number (1-25): 4
+Enter New Rehearsal Hours/Qty (1-200): 45
+Select New Status (1 = Pending, 2 = Ready, 3 = Issue): 2
+Save these changes permanently to disk? (y/n): y
+
+[Success] Record ID 1001 updated securely in-place at byte offset 0.
+
+Enter your choice (1-9): 5
+
+Enter Resource ID to delete: 2002
+
+--- Record Located for Deletion ---
+--------------------------------------------------
+       DETAILED RESOURCE AUDIT (FRIEND ACCESS)    
+--------------------------------------------------
+Resource ID (Key) : 2002
+Category Type     : Stage Prop
+Name / Title      : Battle Dagger
+Role / Prop Type  : Armory Weapon
+Assigned Scene    : Scene 3
+Readiness Status  : Pending/Issue
+Memory Byte Size  : 116 bytes on disk
+--------------------------------------------------
+WARNING: Are you sure you want to delete this resource? (y/n): y
+
+[Success] Resource ID 2002 marked as deleted. Excluded from active queries.
+
+Enter your choice (1-9): 2
+
+------------------------------------------------------------------------------------------
+ID      Type          Name / Title          Role / Category   Scene   Hrs/Qty   Status    
+------------------------------------------------------------------------------------------
+1001    Cast Member   Amit Sharma           King Lear (Lead)  4       45 hrs    Ready     
+1002    Cast Member   Sunita Rao            Cordelia (Supp)   2       22 hrs    Ready     
+2001    Stage Prop    Gilded Crown          Royal Regalia     1       2 pcs     Ready     
+------------------------------------------------------------------------------------------
+
+Enter your choice (1-9): 7
+
+==========================================================
+   CA3 UNIT IV DEMO: OPERATOR OVERLOADING & CONVERSIONS   
+==========================================================
+
+1. Demonstrating overloaded stream operator<<:
+   itemA: [ID: 1001 | Cast | Lead Actor (Macbeth) | Scene 2 | Metric: 20 | Ready]
+   itemB: [ID: 1002 | Cast | Supporting Actor (Banquo) | Scene 2 | Metric: 15 | Ready]
+
+2. Demonstrating overloaded relational operator==:
+   [PASS] itemA (ID 1001) == itemClone (ID 1001) matched correctly based on primary key.
+
+3. Demonstrating overloaded relational operator<:
+   [PASS] itemA (ID 1001) < itemB (ID 1002) evaluated as true.
+
+4. Demonstrating overloaded operator+= (Adding 8 rehearsal hours):
+   Before: [ID: 1001 | Cast | Lead Actor (Macbeth) | Scene 2 | Metric: 20 | Ready]
+   After itemA += 8: [ID: 1001 | Cast | Lead Actor (Macbeth) | Scene 2 | Metric: 28 | Ready]
+
+5. Demonstrating Basic-to-Class Type Conversion:
+   Converted integer 1005 to object: [ID: 1005 | Cast | KeyLookup (Key) | Scene 1 | Metric: 0 | Pending]
+
+6. Demonstrating Class-to-Basic Type Conversion:
+   Extracted integer ID via (int)itemA     : 1001
+   Calculated cost footprint via (double) : Rs. 1400.00
+----------------------------------------------------------
+
+Enter your choice (1-9): 8
+
+==========================================================
+  CA3 UNIT V DEMO: DYNAMIC POLYMORPHISM & VIRTUAL DESTRUCTOR
+==========================================================
+
+Iterating over Base Pointers via Runtime Polymorphism:
+
+--------------------------------------------------
+ [CAST MEMBER CARD] Resource ID: 1001
+ Actor Name       : Amit Sharma
+ Character Role   : King Lear
+ Role Tier        : Lead
+ Costume Design   : Royal Purple Robe
+ Assigned Scene   : Scene 1
+ Hours Rehearsed  : 40 hrs
+ Hourly Allowance : Rs. 300.00
+ Total Stipend Due: Rs. 12000.00
+ Status           : Ready
+--------------------------------------------------
+
+--------------------------------------------------
+ [STAGE PROP CARD] Resource ID : 2001
+ Prop Title       : Gilded Crown
+ Category         : Royal Regalia
+ Storage Location : Prop-Locker-A1
+ Fragile Item?    : YES (Fragile - Handle carefully)
+ Quantity on Hand : 2 units
+ Replacement Cost : Rs. 2500.00 per unit
+ Total Value/Risk : Rs. 5000.00
+ Status           : Ready
+--------------------------------------------------
+
+--------------------------------------------------
+ [CAST MEMBER CARD] Resource ID: 1002
+ Actor Name       : Sunita Rao
+ Character Role   : Cordelia
+ Role Tier        : Supporting
+ Costume Design   : Silk Embroidered Gown
+ Assigned Scene   : Scene 3
+ Hours Rehearsed  : 25 hrs
+ Hourly Allowance : Rs. 200.00
+ Total Stipend Due: Rs. 5000.00
+ Status           : Pending/Issue
+--------------------------------------------------
+
+Testing Derived-Specific Behavior via Base Pointer Cast:
+   -> Logged 4 extra hours for Amit Sharma. New total: 44 hours.
+   -> Restocked 1 units of Gilded Crown. New inventory count: 3.
+
+Cleaning Up Dynamic Memory using delete on Base Pointers:
+[Clean] All dynamic polymorphic memory freed successfully via virtual destructor.
+----------------------------------------------------------
+
+Enter your choice (1-9): 9
+
+Exiting Theatre Rehearsal Manager. All binary records safely stored.
