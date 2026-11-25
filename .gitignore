@@ -13,8 +13,10 @@
 *.xls
 docs/
 
-# Temporary scripts
+# Temporary scripts & IDE config
 update_report_with_github.py
 fix_report_layout.py
 /12613305_CAP455_CA3_TheatreRehearsalManager.cpp
 ca 3/*_Updated.docx
+.vscode/
+run.bat
