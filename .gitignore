@@ -5,6 +5,7 @@
 *.tmp
 *.log
 ~$*.docx
+output/
 
 # Exclude Reports, Syllabus, Docs & Excel from GitHub (Kept locally only)
 *.docx
